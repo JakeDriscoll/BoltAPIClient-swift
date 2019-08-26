@@ -8,6 +8,7 @@ struct APIClient {
     //MARK: Workers
     @discardableResult
     func request(_ request: URLRequest, priority: Operation.QueuePriority = .normal, completion: @escaping (Data?, URLResponse?, Error?) -> ()) -> URLSessionTaskOperation {
+
         let task = self.session.dataTask(with: request) { (data, response, error) in
             completion(data, response, error)
         }

@@ -7,15 +7,17 @@
 
 import Foundation
 
-public class ConnectToTerminal : BaseRequest {
-    public override var resourceName: String {
+public class ConnectToTerminal : Encodable, APIRequest {
+    public typealias Response = [String:String]
+    public var resourceName: String {
         return "connect"
     }
-    private let hsn: String
+    let merchantId, hsn, force: String
 
-    init(merchantID: String, terminalID: String)
+    init(merchantId: String, terminalID: String)
     {
         self.hsn = terminalID
-        super.init(merchantID: merchantID)
+        self.force = "true"
+        self.merchantId = merchantId
     }
 }

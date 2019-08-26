@@ -6,12 +6,22 @@
 //
 
 import Foundation
+public struct ListResponse : Decodable {
+    public let terminals: [String]
+}
 
-public class ListTerminal : BaseRequest {
-    public override var resourceName: String {
+public class ListTerminal : Encodable, APIRequest {
+    
+    public typealias Response = ListResponse
+
+
+    public var resourceName: String {
         return "listTerminals"
     }
-    public override init(merchantID: String) {
-        super.init(merchantID: merchantID)
+
+    let merchantId: String
+
+    public init(merchantId: String) {
+        self.merchantId = merchantId
     }
 }

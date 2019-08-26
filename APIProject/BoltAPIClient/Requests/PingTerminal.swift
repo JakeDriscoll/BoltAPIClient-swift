@@ -7,15 +7,16 @@
 
 import Foundation
 
-public class PingTerminal : BaseRequest {
-    public override var resourceName: String {
+public class PingTerminal : Encodable, APIRequest {
+    public typealias Response = [String:String]
+    public var resourceName: String {
         return "ping"
     }
-    private let hsn: String
+    let merchantId, hsn: String
 
-    init(merchantID: String, terminalID: String)
+    init(merchantId: String, terminalID: String)
     {
         self.hsn = terminalID
-        super.init(merchantID: merchantID)
+        self.merchantId = merchantId
     }
 }

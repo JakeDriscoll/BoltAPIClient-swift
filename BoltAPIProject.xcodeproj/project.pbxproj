@@ -119,7 +119,6 @@
 		507A653B230F1B2200516286 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				507A654E231051A400516286 /* BaseRequest.swift */,
 				507A655023105DF900516286 /* AuthorizationRequestModel.swift */,
 			);
 			path = Models;
@@ -128,6 +127,7 @@
 		507A653C230F1B9200516286 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				507A654E231051A400516286 /* BaseRequest.swift */,
 				507A65452310503700516286 /* AuthorizeCard.swift */,
 				507A65422310503700516286 /* ClearTerminalDisplay.swift */,
 				507A65462310503700516286 /* ConnectToTerminal.swift */,

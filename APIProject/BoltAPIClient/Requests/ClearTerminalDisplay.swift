@@ -7,15 +7,17 @@
 
 import Foundation
 
-public class ClearTerminalDisplay : BaseRequest {
-    public override var resourceName: String {
-        return "ping"
+public class ClearTerminalDisplay : Encodable, APIRequest {
+    public typealias Response = [String:String]
+    public var resourceName: String {
+        return "clearDisplay"
     }
-    private let hsn: String
+    
+    let merchantId, hsn: String
 
-    init(merchantID: String, terminalID: String)
+    init(merchantId: String, terminalID: String)
     {
         self.hsn = terminalID
-        super.init(merchantID: merchantID)
+        self.merchantId = merchantId
     }
 }
